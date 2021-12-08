@@ -1,5 +1,5 @@
 /*===================================================
-													  SELECT
+						 SELECT
 	===================================================*/
 	/* tracks tablosundaki track isimlerini (name) sorgulayınız */
 	SELECT name FROM tracks;
@@ -12,7 +12,7 @@
 	
 	
 	/*===================================================
-													DISTINCT
+				    	DISTINCT
 	===================================================*/
 	/*tracks tablosundaki composer bilgileri sorgulayınız (TEKRARLI OLABİLİR)*/
 	SELECT Composer FROM tracks;
