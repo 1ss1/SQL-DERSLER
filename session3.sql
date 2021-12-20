@@ -17,7 +17,8 @@
 	FROM tracks;
 	
 	/* ÖDEV: invoices tablosunda kaç adet farklı yıl olduğunu hesaplayan sorguyu yazınız*/ 
-	
+	SELECT count(DISTINCT InvoiceDate) AS farklı_yıllar
+	FROM invoices;
 	
 	-- MIN,MAX
 	-------------------------------------------------------------------------------------------------	
@@ -40,6 +41,9 @@
 	
 	/* ÖDEV: invoices  tablosunda 2009 ile 2013(TAMAMI DAHİL) tarihileri arasındaki faturaların toplam
 	değerini listeyiniz */
+	SELECT SUM(total) AS Toplam_fatura
+	FROM invoices
+	WHERE InvoiceDate  BETWEEN '2009-01-01 00:00:00'  AND  '2011-12-31 00:00:00';
 	
 	/* invoices  tablosundaki faturaların ortalama değerini listeyiniz */
 	SELECT ROUND(AVG(total),2) as ortalama_gelir
@@ -132,7 +136,14 @@
 
 /* ÖDEV: Chinook veritabanındaki tracks tablosunda bulunan her bir şarkının türü (genre)
 listeleyiniz.*/
+SELECT GenreId FROM tracks;
+SELECT Name, GenreId FROM genres;
 
+SELECT tracks.GenreId,
+genres.GenreId, genres.Name
+FROM tracks
+INNER JOIN genres
+ON genres.GenreId = tracks.GenreId;
 	 
  /* ÖDEV: invoice tablosundaki faturaların her birinin müşteri adını (FirstName),
  soyadını (lastName), fatura tarihi (InvoiceDate) ve fatura meblağını (total) 
