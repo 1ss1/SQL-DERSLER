@@ -114,6 +114,7 @@
 --     2) INNER JOIN:  Tablolardaki ortak olan sonuc kumesini gosterir
 --     3) LEFT JOIN:  Ilk tabloda (Sol) olup digerinde olmayan sonuclari gosterir
 --     4) RIGHT JOIN: Sadece Ikinci tabloda olan tum sonuclari gosterir.
+--  	CROSS JOIN: Birleştirilmiş tablolardaki kayıtların Kartezyen çarpımını döndürür.
 
 --		NOT: SQLite Sadece INNER, LEFT VE CROSS JOIN İşlemlerini desteklemektedir.
  
